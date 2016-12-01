@@ -1,0 +1,9 @@
+body {
+	background-image: url("assets/images/log.jpg");
+	background-repeat: none;
+	background-color: white;
+}
+
+h2 {
+	color: grey;
+}
