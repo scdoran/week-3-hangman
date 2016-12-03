@@ -1,7 +1,6 @@
-body {
-	background-image: url("assets/images/log.jpg");
-	background-repeat: none;
-	background-color: white;
+* {
+	background-image: url("../images/log.jpg");
+	background-repeat: no-repeat;
 }
 
 h2 {
