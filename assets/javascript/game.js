@@ -15,22 +15,23 @@ document.onkeyup = function (event) {
 	if ((userGuess = "a") || (userGuess = "b") || (userGuess = "c") || (userGuess = "d") || (userGuess = "e") || (userGuess = "f") || (userGuess = "g") || (userGuess = "h") || (userGuess = "i") || (userGuess = "j") || (userGuess = "k") || (userGuess = "l") || (userGuess = "m") || (userGuess = "n") || (userGuess = "o") || (userGuess = "p") || (userGuess = "q") || (userGuess = "r") || (userGuess = "s") || (userGuess = "t") || (userGuess = "u") || (userGuess = "v") || (userGuess = "w") || (userGuess = "x") || (userGuess = "y") || (userGuess = "z")) {
 
 		if (userGuess === computerGuess) {
-			wins++;
-			document.getElementById("guesses").textContent += event.key + " ";
+			game.wins++;
+			console.log("You win! The letter guessed was " + computerGuess);
+			document.getElementById("guesses").textContent = " ";
 			game.guessesLeft = 9;
-			alert("You win! The letter was " + computerGuess + "Would you like to see if you can be stumped by my log again?");
+			alert("You win! Would you like to play again and see if you can be stumped by my log?");
 		}
 
 		else if (userGuess !== computerGuess) {
 			game.guessesLeft--;
-			console.log("You guessed " + event.key + " ");
 			document.getElementById("guesses").textContent += event.key + " ";
 		}	
 		
-		else if (game.guessesLeft === 0) {
+		if (game.guessesLeft === 0) {
 			alert("You have been...stumped by my log. The letter you were trying to guess was " + computerGuess + " Would you like to try again?");
-			document.getElementById("guesses").textContent += event.key + " ";
-			game.losses = 1;
+			document.getElementById("guesses").textContent=" ";
+			console.log("You lost. The letter was " + computerGuess);
+			game.losses++;
 			game.guessesLeft = 9;
 		}		
 	}
