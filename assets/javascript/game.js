@@ -10,9 +10,7 @@ document.onkeyup = function (event) {
 
 	var userGuess = event.key;
 
-  	for (var i = 0; i < 1; i++) {
-  		var computerGuess = letters[Math.floor(Math.random() * letters.length)];
-  	}
+	var computerGuess = letters[Math.floor(Math.random() * letters.length)];
 
 	if ((userGuess = "a") || (userGuess = "b") || (userGuess = "c") || (userGuess = "d") || (userGuess = "e") || (userGuess = "f") || (userGuess = "g") || (userGuess = "h") || (userGuess = "i") || (userGuess = "j") || (userGuess = "k") || (userGuess = "l") || (userGuess = "m") || (userGuess = "n") || (userGuess = "o") || (userGuess = "p") || (userGuess = "q") || (userGuess = "r") || (userGuess = "s") || (userGuess = "t") || (userGuess = "u") || (userGuess = "v") || (userGuess = "w") || (userGuess = "x") || (userGuess = "y") || (userGuess = "z")) {
 
@@ -25,17 +23,17 @@ document.onkeyup = function (event) {
 		}
 
 		else if (userGuess !== computerGuess) {
-			game.guessesLeft--;
-			document.getElementById("guesses").textContent += event.key + " ";
+				game.guessesLeft--;
+				document.getElementById("guesses").textContent += event.key + " ";
 		}	
 		
 		if (game.guessesLeft === 0) {
+			game.losses++;
 			alert("You have been...stumped by my log. The letter you were trying to guess was " + computerGuess + " Would you like to try again?");
 			document.getElementById("guesses").textContent=" ";
 			console.log("You lost. The letter was " + computerGuess);
-			game.losses++;
 			game.guessesLeft = 9;
-		}		
+		}
 	}
 
 	document.getElementById("wins").innerHTML = game.wins;
