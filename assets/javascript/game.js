@@ -11,6 +11,17 @@ function compGuess() {
 	return letters[Math.floor(Math.random() * letters.length)];
 }
 
+var guessedLetters = [];
+
+function isInArray(a) {
+    for (var i = 0;i < guessedLetters.length; i++) {
+        if (guessedLetters[i] === a) {
+          return true;
+        }
+    }
+    return false;
+}
+
 var computerGuess = compGuess();
 
 document.onkeyup = function(event) {
@@ -26,12 +37,20 @@ document.onkeyup = function(event) {
 			alert("You win! Would you like to play again and see if you can be stumped by my log?");
 			game.guessesLeft = 10;
 			computerGuess = compGuess();
+			guessedLetters = [];
 		}
 
 		else if (userGuess !== computerGuess) {
+			if (isInArray(userGuess)) {
+          		alert("You already guessed that letter!");
+       		}
+
+       		else{
 				game.guessesLeft--;
+				guessedLetters.push(userGuess);
 				document.getElementById("guesses").textContent += event.key + " ";
-		}	
+			}
+		}
 		
 		if (game.guessesLeft === 0) {
 			game.losses++;
@@ -40,7 +59,7 @@ document.onkeyup = function(event) {
 			console.log("You lost. The letter was " + computerGuess);
 			game.guessesLeft = 10;
 			computerGuess = compGuess();
-
+			guessedLetters = [];
 		}
 	}
 
