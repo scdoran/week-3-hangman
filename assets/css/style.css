@@ -1,8 +1,15 @@
-* {
-	background-image: url("../images/log.jpg");
-	background-repeat: no-repeat;
+body {
+     margin: 0;
+     background: url("../images/log.jpg");
+     background-size: 100%;
+     background-repeat:no-repeat;
 }
 
 h2 {
 	color: grey;
+}
+
+p {
+	color: red;
+	font-weight: bold;
 }
