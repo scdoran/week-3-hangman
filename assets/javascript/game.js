@@ -10,7 +10,9 @@ document.onkeyup = function (event) {
 
 	var userGuess = event.key;
 
-	var computerGuess = letters[Math.floor(Math.random() * letters.length)];
+  	for (var i = 0; i < 1; i++) {
+  		var computerGuess = letters[Math.floor(Math.random() * letters.length)];
+  	}
 
 	if ((userGuess = "a") || (userGuess = "b") || (userGuess = "c") || (userGuess = "d") || (userGuess = "e") || (userGuess = "f") || (userGuess = "g") || (userGuess = "h") || (userGuess = "i") || (userGuess = "j") || (userGuess = "k") || (userGuess = "l") || (userGuess = "m") || (userGuess = "n") || (userGuess = "o") || (userGuess = "p") || (userGuess = "q") || (userGuess = "r") || (userGuess = "s") || (userGuess = "t") || (userGuess = "u") || (userGuess = "v") || (userGuess = "w") || (userGuess = "x") || (userGuess = "y") || (userGuess = "z")) {
 
