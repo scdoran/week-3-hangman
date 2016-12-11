@@ -54,6 +54,7 @@ document.onkeyup = function(event) {
 		
 		if (game.guessesLeft === 0) {
 			game.losses++;
+			audio.play();
 			alert("You have been...stumped by my log. The letter you were trying to guess was " + computerGuess + " Would you like to try again?");
 			document.getElementById("guesses").textContent=" ";
 			console.log("You lost. The letter was " + computerGuess);
