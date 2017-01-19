@@ -1,8 +1,11 @@
 body {
      margin: 0;
-     background: url("../images/log.jpg");
-     background-size: 100%;
-     background-repeat:no-repeat;
+     background: url("../images/log.jpg") center center fixed;
+    background-repeat: no-repeat;
+     background-size: cover;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
 }
 
 h1 {
@@ -34,6 +37,14 @@ p, span {
 
 .panel-transparent .panel-heading .panel-body {
     background-color: rgba(245, 245, 245, 0.4)
+}
+
+.letters {
+    margin-right: 5px;
+}
+
+.letters:hover {
+    text-shadow: 1px 1px 0 #2be70e, -1px -1px 0 #2be70e, 1px -1px 0 #2be70e, -1px 1px 0 #2be70e, 0px 1px 0 #2be70e, 1px 0px 0 #2be70e, 0px -1px 0 #2be70e, -1px 0px 0 #2be70e, 3px 3px 2px #000000;    text-shadow: 1px 1px 0 #2be70e, -1px -1px 0 #2be70e, 1px -1px 0 #2be70e, -1px 1px 0 #2be70e, 0px 1px 0 #2be70e, 1px 0px 0 #2be70e, 0px -1px 0 #2be70e, -1px 0px 0 #2be70e, 3px 3px 2px #000000;
 }
 
 img {
